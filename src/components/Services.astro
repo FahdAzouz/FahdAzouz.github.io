@@ -1,0 +1,25 @@
+<section id="services" class="py-20 bg-neutrals-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center">
+            Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                [
+                    "Web Development",
+                    "UI/UX Design",
+                    "Mobile App Development",
+                ].map((service) => (
+                    <div class="bg-neutrals-700 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">{service}</h3>
+                        <p class="text-neutrals-300">
+                            Description of the {service.toLowerCase()} service
+                            you offer. Highlight your expertise and what clients
+                            can expect.
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
