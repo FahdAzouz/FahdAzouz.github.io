@@ -4,6 +4,7 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   site: 'https://fahdazouz.github.io',
+  base: '/',
   integrations: [tailwind(), react()],
   vite: {
     ssr: {
