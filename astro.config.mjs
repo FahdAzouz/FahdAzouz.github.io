@@ -7,9 +7,12 @@ export default defineConfig({
   base: '/',
   integrations: [tailwind(), react()],
   build: {
-    assets: '_astro'
+    assets: 'astro'
   },
   vite: {
+    build: {
+      assetsDir: 'astro', // This ensures Vite uses the correct assets directory
+    },
     ssr: {
       external: ["svgo"],
     },
