@@ -6,6 +6,9 @@ export default defineConfig({
   site: 'https://fahdazouz.github.io',
   base: '/',
   integrations: [tailwind(), react()],
+  build: {
+    assets: '_astro'
+  },
   vite: {
     ssr: {
       external: ["svgo"],
