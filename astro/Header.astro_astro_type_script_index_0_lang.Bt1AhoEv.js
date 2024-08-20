@@ -1,0 +1,1 @@
+(window.location.pathname==="/"||window.location.pathname==="/index.html")&&document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(n){n.preventDefault();const o=this.getAttribute("href").substring(1),t=document.getElementById(o);t&&t.scrollIntoView({behavior:"smooth"})})});
