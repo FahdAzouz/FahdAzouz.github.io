@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import projects from "../../data/projects.js";
+
+export function getStaticPaths() {
+    return projects.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={project.title}>
+    <main class="container mx-auto px-4 py-20">
+        <h1 class="text-4xl font-bold mb-8">{project.title}</h1>
+        <img
+            src={project.image}
+            alt={project.title}
+            class="w-full max-w-2xl mx-auto mb-8 rounded-lg shadow-lg"
+        />
+        <p class="mb-8 text-lg">{project.fullDescription}</p>
+        <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-primary text-neutrals-50 px-6 py-3 rounded-full hover:bg-primary/80 transition-colors"
+        >
+            View on GitHub
+        </a>
+    </main>
+</Layout>

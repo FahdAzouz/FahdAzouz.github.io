@@ -1,21 +1,20 @@
 ---
-// Array of completed project numbers
-const completedProjects = [1, 2];
+import projects from '../data/projects.js';
 ---
 
 <section id="work" class="py-20 bg-neutrals-900">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center">My Work</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((project) => (
+            {projects.map((project) => (
                 <div class="bg-neutrals-800 rounded-lg overflow-hidden shadow-lg">
-                    <div class={`relative ${!completedProjects.includes(project) ? 'project-incomplete' : ''}`}>
+                    <div class={`relative ${!project.completed ? 'project-incomplete' : ''}`}>
                         <img
-                            src={`/images/projects/projectBgFiller${project}.png`}
-                            alt={`Project ${project}`}
+                            src={project.image}
+                            alt={project.title}
                             class="w-full h-48 object-cover"
                         />
-                        {!completedProjects.includes(project) && (
+                        {!project.completed && (
                             <div class="absolute inset-0 bg-neutrals-900 bg-opacity-70 flex items-center justify-center">
                                 <p class="text-neutrals-300 text-lg">Coming Soon</p>
                             </div>
@@ -23,15 +22,13 @@ const completedProjects = [1, 2];
                     </div>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">
-                            Project {project}
+                            {project.title}
                         </h3>
                         <p class="text-neutrals-300 mb-4">
-                            {completedProjects.includes(project) 
-                                ? "Brief description of the project goes here."
-                                : "This project is currently in development."}
+                            {project.shortDescription}
                         </p>
-                        {completedProjects.includes(project) ? (
-                            <a href="#" class="text-primary hover:underline">
+                        {project.completed ? (
+                            <a href={`/projects/${project.slug}`} class="text-primary hover:underline">
                                 View Project
                             </a>
                         ) : (
