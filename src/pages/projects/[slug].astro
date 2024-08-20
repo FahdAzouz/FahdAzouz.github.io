@@ -1,33 +1,116 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import projects from "../../data/projects.js";
+import ProjectDescription from "../../components/ProjectDescription";
 
 export function getStaticPaths() {
-    return projects.map((project) => ({
+    return projects.map((project, index) => ({
         params: { slug: project.slug },
-        props: { project },
+        props: {
+            project,
+            prevProject: projects[index - 1],
+            nextProject: projects[index + 1],
+        },
     }));
 }
 
-const { project } = Astro.props;
+const { project, prevProject, nextProject } = Astro.props;
 ---
 
 <Layout title={project.title}>
     <main class="container mx-auto px-4 py-20">
         <h1 class="text-4xl font-bold mb-8">{project.title}</h1>
-        <img
-            src={project.image}
-            alt={project.title}
-            class="w-full max-w-2xl mx-auto mb-8 rounded-lg shadow-lg"
-        />
-        <p class="mb-8 text-lg">{project.fullDescription}</p>
-        <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-primary text-neutrals-50 px-6 py-3 rounded-full hover:bg-primary/80 transition-colors"
+
+        <div
+            class="relative w-full aspect-video mb-8 bg-neutrals-900 rounded-lg overflow-hidden p-10 md:p-40 padding-top-[20.25%]"
         >
-            View on GitHub
-        </a>
+            <div class="relative w-full h-full">
+                {
+                    project.images.map((image, index) => (
+                        <div
+                            class={`absolute inset-0 transition-opacity duration-500 ${index === 0 ? "opacity-100" : "opacity-0"}`}
+                            data-index={index}
+                        >
+                            <img
+                                src={image}
+                                alt={`${project.title} - Image ${index + 1}`}
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                    ))
+                }
+                {
+                    project.images.length > 1 && (
+                        <>
+                            <button
+                                class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-neutrals-900 bg-opacity-50 hover:bg-blue-300 rounded-full p-2 transition-all z-10"
+                                id="prevImage"
+                            >
+                                &larr;
+                            </button>
+                            <button
+                                class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-neutrals-900 bg-opacity-50 hover:bg-blue-300 rounded-full p-2 transition-all z-10"
+                                id="nextImage"
+                            >
+                                &rarr;
+                            </button>
+                        </>
+                    )
+                }
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <ProjectDescription project={project} client:load />
+        </div>
+
+        <div class="flex justify-between mt-12">
+            {
+                prevProject && (
+                    <a
+                        href={`/projects/${prevProject.slug}`}
+                        class="bg-secondary text-neutrals-50 px-4 py-2 rounded hover:bg-secondary/80 transition-colors"
+                    >
+                        &larr; Previous Project
+                    </a>
+                )
+            }
+            {
+                nextProject && (
+                    <a
+                        href={`/projects/${nextProject.slug}`}
+                        class="bg-secondary text-neutrals-50 px-4 py-2 rounded hover:bg-secondary/80 transition-colors"
+                    >
+                        Next Project &rarr;
+                    </a>
+                )
+            }
+        </div>
     </main>
 </Layout>
+
+<script>
+    const images = document.querySelectorAll("[data-index]");
+    const prevButton = document.getElementById("prevImage");
+    const nextButton = document.getElementById("nextImage");
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+        images.forEach((img, i) => {
+            img.classList.toggle("opacity-0", i !== index);
+            img.classList.toggle("opacity-100", i === index);
+        });
+    }
+
+    if (prevButton && nextButton) {
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+    }
+</script>
