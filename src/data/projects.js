@@ -40,12 +40,12 @@ export default [
       images: [
          "/images/projects/projectBgFiller2.png",
       ],
-      shortDescription: "Custom personal website using Astro, achieving a 95% PageSpeed Insights score.",
+      shortDescription: "Custom personal website using Astro.",
       fullDescription: `Created a custom personal website using Astro, a modern static site generator. This project showcases my ability to create high-performance, easily maintainable websites using cutting-edge technologies.
   
   Key features and achievements:
   
-  1. Performance Optimization: Leveraged Astro's partial hydration for optimal performance and interactivity, achieving a 95% PageSpeed Insights score for both mobile and desktop.
+  1. Performance Optimization: Leveraged Astro's partial hydration for optimal performance and interactivity.
   
   2. Modern Design: Designed an intuitive and visually appealing interface that effectively represents the client's personal brand.
   
@@ -80,7 +80,7 @@ export default [
   
   1. Frontend Development:
      - Utilized React with TypeScript for a type-safe, maintainable frontend codebase.
-     - Implemented responsive UI/UX design, increasing mobile user engagement by 40%.
+     - Implemented responsive UI/UX design.
      - Created interactive data visualization components for financial analysis using libraries like Chart.js or D3.js.
   
   2. Backend Development:
@@ -93,7 +93,7 @@ export default [
   
   4. E-commerce Functionality:
      - Developed a complete e-commerce system including product catalog, shopping cart, and checkout process.
-     - Integrated a secure payment gateway, resulting in a 99.9% successful transaction rate.
+     - Integrated a secure payment gateway.
   
   5. Financial Analysis Tools:
      - Implemented advanced financial calculation algorithms for investment analysis, risk assessment, and portfolio management.
@@ -129,7 +129,7 @@ export default [
          "/images/projects/project-2/image-11.jpeg",
          "/images/projects/project-2/image-12.jpeg",
       ],
-      shortDescription: "React Native mobile app to coordinate between counselors and students, increasing engagement by 60%.",
+      shortDescription: "React Native mobile app to coordinate between counselors and students.",
       fullDescription: `CampusCompass is a mobile application designed to streamline communication and coordination between university counselors and students. This project demonstrates my proficiency in mobile app development and my ability to create solutions that significantly improve user engagement and experience.
   
   Key features and accomplishments:
@@ -139,7 +139,7 @@ export default [
      - Implemented a responsive design that adapts to various screen sizes and orientations.
   
   2. User Interface:
-     - Designed an intuitive and user-friendly interface, resulting in a 60% increase in student-counselor engagement.
+     - Designed an intuitive and user-friendly interface.
      - Created custom UI components for a unique and branded app experience.
   
   3. Real-time Communication:
@@ -196,9 +196,9 @@ export default [
   
   5. Front-end Development: Created dynamic HTML templates using Jinja2 and enhanced user interactivity with jQuery.
   
-  6. Testing: Achieved 95% code test coverage through comprehensive unit testing, ensuring reliability and maintainability of the codebase.
+  6. Testing: test coverage through comprehensive unit testing, ensuring reliability and maintainability of the codebase.
   
-  7. Performance Optimization: Reduced page load time by 30% through efficient database queries and optimized front-end assets.
+  7. Performance Optimization: Reduced page load time through efficient database queries and optimized front-end assets.
   
   This project showcases my ability to develop a complex, full-stack web application, demonstrating skills in Python programming, web development frameworks, database management, API design, and front-end technologies. It also highlights my proficiency in software architecture, as the project was designed with modularity and scalability in mind.`,
       githubLink: "https://github.com/FahdAzouz/AirBnB_clone_v4",
@@ -211,7 +211,7 @@ export default [
       images: [
          "/images/projects/project-4/image-1.png",
       ],
-      shortDescription: "Developed a Convolutional Neural Network (CNN) for image classification using the CIFAR-10 dataset, achieving 92% accuracy.",
+      shortDescription: "Developed a Convolutional Neural Network (CNN) for image classification using the CIFAR-10 dataset.",
       fullDescription: `This project focused on developing and optimizing a Convolutional Neural Network (CNN) for image classification using the CIFAR-10 dataset. The CIFAR-10 dataset consists of 60,000 32x32 color images across 10 different classes, providing a challenging but manageable task for deep learning models.
   
   Key aspects of the project included:
