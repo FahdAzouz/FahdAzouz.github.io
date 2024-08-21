@@ -42,15 +42,15 @@ const FilterableProjectShowcase = ({ projects }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-neutrals-800 rounded-lg overflow-hidden shadow-lg cursor-pointer"
-            onClick={() => setSelectedProject(project)}
+            className="bg-neutrals-800 rounded-lg overflow-hidden shadow-lg"
           >
             <div className={`relative ${!project.completed ? 'project-incomplete' : ''}`}>
               {project.images && project.images.length > 0 ? (
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover cursor-pointer"
+                  onClick={() => setSelectedProject(project)}
                 />
               ) : (
                 <div className="w-full h-48 bg-neutrals-700 flex items-center justify-center">
@@ -66,6 +66,14 @@ const FilterableProjectShowcase = ({ projects }) => {
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-neutrals-300 mb-4">{project.shortDescription}</p>
+              {project.completed && (
+                <a
+                  href={`/projects/${project.slug}`}
+                  className="text-primary hover:underline"
+                >
+                  View Project
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
@@ -88,7 +96,7 @@ const FilterableProjectShowcase = ({ projects }) => {
               onClick={(e) => e.stopPropagation()}
             >
               <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-              <p className="text-neutrals-300 mb-4">{selectedProject.fullDescription}</p>
+              <p className="text-neutrals-300 mb-4">{selectedProject.shortDescription}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {selectedProject.technologies.map((tech) => (
                   <span key={tech} className="bg-primary text-white px-2 py-1 rounded-full text-sm">
@@ -97,14 +105,22 @@ const FilterableProjectShowcase = ({ projects }) => {
                 ))}
               </div>
               {selectedProject.completed && (
-                <a
-                  href={selectedProject.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary text-white px-4 py-2 rounded-full inline-block hover:bg-primary-dark transition-colors"
-                >
-                  View on GitHub
-                </a>
+                <div className="flex justify-between items-center">
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary text-white px-4 py-2 rounded-full inline-block hover:bg-primary-dark transition-colors"
+                  >
+                    View on GitHub
+                  </a>
+                  <a
+                    href={`/projects/${selectedProject.slug}`}
+                    className="text-primary hover:underline"
+                  >
+                    View Full Project Details
+                  </a>
+                </div>
               )}
             </motion.div>
           </motion.div>

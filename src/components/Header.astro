@@ -1,4 +1,5 @@
 ---
+import ThemeSwitcher from './ThemeSwitcher';
 const currentPath = Astro.url.pathname;
 const isHomePage = currentPath === "/" || currentPath === "/index.html";
 ---
@@ -16,6 +17,7 @@ const isHomePage = currentPath === "/" || currentPath === "/index.html";
         <li><a href={isHomePage ? "#contact" : "/#contact"} class="hover:text-primary transition-colors">Contact</a></li>
       </ul>
     </nav>
+    <ThemeSwitcher client:load />
   </div>
 </header>
 
