@@ -33,9 +33,9 @@ import{j as s}from"./jsx-runtime.7faW4zRM.js";import{r as n}from"./index.DhYZZe0
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const g=i("Mail",[["rect",{width:"20",height:"16",x:"2",y:"4",rx:"2",key:"18n3k1"}],["path",{d:"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7",key:"1ocrg3"}]]);/**
+ */const b=i("Mail",[["rect",{width:"20",height:"16",x:"2",y:"4",rx:"2",key:"18n3k1"}],["path",{d:"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7",key:"1ocrg3"}]]);/**
  * @license lucide-react v0.429.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const b=i("Twitter",[["path",{d:"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",key:"pff0z6"}]]),z=()=>{const t=[{name:"GitHub",icon:x,url:"https://github.com/FahdAzouz"},{name:"LinkedIn",icon:y,url:"https://www.linkedin.com/in/fahd-azouz/"},{name:"Twitter",icon:b,url:"https://twitter.com/FahdAzouz"},{name:"Email",icon:g,url:"mailto:fahdstudies00@gmail.com"}];return s.jsx("div",{className:"flex space-x-4",children:t.map(e=>s.jsx("a",{href:e.url,target:"_blank",rel:"noopener noreferrer",className:"text-neutrals-300 hover:text-primary transition-colors","aria-label":e.name,children:s.jsx(e.icon,{size:24})},e.name))})};export{z as default};
+ */const g=i("Twitter",[["path",{d:"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",key:"pff0z6"}]]),j=()=>{const t=[{name:"GitHub",icon:x,url:"https://github.com/FahdAzouz"},{name:"LinkedIn",icon:y,url:"https://www.linkedin.com/in/fahd-azouz/"},{name:"Twitter",icon:g,url:"https://twitter.com/FahdAzouz"},{name:"Email",icon:b,url:"mailto:fahdstudies00@gmail.com"}];return s.jsx("div",{className:"flex justify-center pb-10 space-x-4",children:t.map(e=>s.jsx("a",{href:e.url,target:"_blank",rel:"noopener noreferrer",className:"text-neutrals-300 hover:text-primary transition-colors","aria-label":e.name,children:s.jsx(e.icon,{size:24})},e.name))})};export{j as default};
