@@ -10,7 +10,7 @@ const SocialMediaLinks = () => {
     ];
 
     return (
-        <div className="flex space-x-4">
+        <div className="flex justify-center pb-10 space-x-4">
             {socialLinks.map((link) => (
                 <a
                     key={link.name}
