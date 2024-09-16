@@ -37,7 +37,7 @@ export default [
   
   This project demonstrates my proficiency in modern web development practices, including server-side rendering, responsive design, database management, and creating full-stack solutions for complex event management scenarios.`,
       githubLink: "https://github.com/FahdAzouz/ieee-event-website",
-      completed: false,
+      completed: true,
       technologies: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "WebSocket"]
    },
    {
