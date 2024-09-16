@@ -3,7 +3,13 @@ export default [
       title: "IEEE Event Website",
       slug: "ieee-event-website",
       images: [
-         "/images/projects/projectBgFiller3.png",
+         "/images/projects/project-6/home-1.png",
+         "/images/projects/project-6/home-2.png",
+         "/images/projects/project-6/home-3.png",
+         "/images/projects/project-6/home-4.png",
+         "/images/projects/project-6/program.png",
+         "/images/projects/project-6/call-for-papers.png",
+         "/images/projects/project-6/about-us.png",
       ],
       shortDescription: "Comprehensive web application for a university IEEE event using React, Next.js, MongoDB, and Tailwind CSS.",
       fullDescription: `The IEEE Event Website project involved creating a full-stack web application to manage and promote a university IEEE event. This project showcases my ability to develop modern, responsive web applications using cutting-edge technologies.
